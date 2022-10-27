@@ -1,4 +1,4 @@
-import { useState} from "react";
+import { useState } from "react";
 import pokemon from "pokemontcgsdk";
 import PokemonModal from "../components/PokemonModal.js";
 import Image from "next/image";
@@ -21,7 +21,11 @@ export default function Home() {
             q: `name:${inputText} supertype:${cardType}`,
             orderBy: `${asc}${filterType}`,
           })
+          // .where({
+          //   q: `name:dodrio`
+          // })
           .then((result) => {
+            console.log("result", result);
             result.data.map((item) =>
               setPokemonNames((prev) => [
                 ...prev,
@@ -34,13 +38,15 @@ export default function Home() {
                   setNumber: item.number.replace(/[^\d.-]/g, ""),
                   setTotal: item.set.total,
                   setImage: item.set.images.logo,
-                  cardText: item.flavorText,
+                  cardFlavorText: item.flavorText,
+                  cardText: item.text,
                   superType: item.supertype,
                   subTypes: item.subtypes,
                   evolution: item.evolvesTo,
                   hp: item.hp,
                   types: item.types,
                   attacks: item.attacks,
+                  abilities: item.abilities,
                   weak: item.weaknesses,
                   resistance: item.resistances,
                   retreat: item.retreatCost,
@@ -50,6 +56,8 @@ export default function Home() {
                   rarity: item.rarity,
                   releaseDate: item.set.releaseDate,
                   artist: item.artist,
+                  tcgplayer: item.tcgplayer,
+                  cardmarket: item.cardmarket,
                   imageSmallURL: item.images.small,
                   imageLargeURL: item.images.large,
                 },
@@ -103,8 +111,7 @@ export default function Home() {
   };
 
   return (
-    <PokemonContext.Provider
-     value={{setShowModal}}>
+    <PokemonContext.Provider value={{ setShowModal, setActivePokemonObject }}>
       <div>
         <>
           <header>
