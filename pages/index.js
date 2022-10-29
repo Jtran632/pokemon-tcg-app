@@ -21,9 +21,6 @@ export default function Home() {
             q: `name:${inputText} supertype:${cardType}`,
             orderBy: `${asc}${filterType}`,
           })
-          // .where({
-          //   q: `name:dodrio`
-          // })
           .then((result) => {
             console.log("result", result);
             result.data.map((item) =>
@@ -78,7 +75,6 @@ export default function Home() {
         <ul className="grid grid-cols-2 gap-5 md:grid-cols-4 lg:grid-cols-5">
           {pokemonNames.length > 0 ? (
             pokemonNames
-              // .sort((a, b) => new Date(a.releaseDate) - new Date(b.releaseDate))
               .map((item) => (
                 <li key={item.id} className="zoom ">
                   <Image
