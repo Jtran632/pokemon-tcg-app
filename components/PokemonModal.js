@@ -4,7 +4,7 @@ import { PokemonContext } from "./pokemonContext";
 function PokemonModal({ object: item }) {
   const { setShowModal, setActivePokemonObject } = useContext(PokemonContext);
   return (
-    <div className="PokemonModal border-8 border-x-blue-400 border-y-blue-800 border-double rounded text-black p-2">
+    <div className="PokemonModal border-8 border-black rounded text-white p-2">
       <div>
         <button
           className="bg-transparent  text-white font-bold text-4xl py-1 px-2 border-b-3 modalbtn"
@@ -163,7 +163,7 @@ function PokemonModal({ object: item }) {
             <h1>Artist: {item.artist}</h1>
             <br />
 
-            <h1 className=" text-2xl">TCGPLAYER Prices</h1>
+            <h1 className=" text-2xl">TCGPLAYER</h1>
             {item.tcgplayer != null ? (
               <div>
                 <a
@@ -197,7 +197,7 @@ function PokemonModal({ object: item }) {
             )}
             <br />
 
-            <h1 className=" text-2xl">CARDMARKET Prices</h1>
+            <h1 className=" text-2xl">CARDMARKET</h1>
             {item.cardmarket != null ? (
               <div>
                 <a
@@ -209,13 +209,11 @@ function PokemonModal({ object: item }) {
                   View at CARDMARKET
                 </a>
                 <h1>Last Updated: {item.cardmarket.updatedAt}</h1>
-                <h1 className="grid grid-cols-4">
+                <h1 className="grid grid-cols-3 min-content">
                   {Object.keys(item.cardmarket.prices).map((keyName, i) => (
-                    <li className=" -" key={i}>
-                      <div>{keyName}</div>
-                      <span>
-                        <h1>{item.cardmarket.prices[keyName]}€</h1>
-                      </span>
+                    <li key={i}>
+                      <div className=" underline">{keyName}</div>
+                      <h1>{item.cardmarket.prices[keyName]}€</h1>
                     </li>
                   ))}
                 </h1>

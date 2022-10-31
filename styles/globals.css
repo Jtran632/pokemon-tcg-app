@@ -6,12 +6,14 @@ header {
   background-color: black;
   background-position: center;
   padding-bottom: 2rem;
+  //background-image: url("../assets/header.jpg");
 }
 
 body {
   padding: 0;
   margin: 0;
   background-image: url("../assets/bg.png");
+  //background-image: url("../assets/bg2.jpg");
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -26,7 +28,7 @@ a {
   box-sizing: border-box;
 }
 *::-webkit-scrollbar {
-  width: 15px;
+  width: 0px;
 }
 .zoom {
   transition: transform 0.1s; /* Animation */
@@ -55,12 +57,12 @@ a {
   width: 100%;
   height: 100vh;
   //background-image: url("https://64.media.tumblr.com/25ee8740287ea37d1a8bd09186628020/tumblr_mixxfrVNl41s2m8nko1_r1_500.gif");
-  background-image: url("https://static.planetminecraft.com/files/profile_banner/500666_5.gif");
+  //background-image: url("https://static.planetminecraft.com/files/profile_banner/500666_5.gif");
+  background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cad4b52e-f6b1-432f-9035-a5f4853bcf15/dadi2rt-16170d32-ea53-4523-9064-489fe1d8a79e.gif?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiJcL2ZcL2NhZDRiNTJlLWY2YjEtNDMyZi05MDM1LWE1ZjQ4NTNiY2YxNVwvZGFkaTJydC0xNjE3MGQzMi1lYTUzLTQ1MjMtOTA2NC00ODlmZTFkOGE3OWUuZ2lmIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.7j9D9PQAaouSZJ2pz6ZRi9MzyRzHbiX3443l7UnYlks);
   background-repeat: no-repeat;
   background-size: cover;
-  background-color: white; /* color */
+  //background-color: white; /* color */
   overflow: scroll;
-
   overflow-x: hidden;
 }
 
